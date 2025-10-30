@@ -3,17 +3,41 @@
 
 <head>
     <meta charset="UTF-8">
-    <title> Add a Pet  </title>
+    <title> Add a Pet </title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
 </head>
 
 <body>
-    <nav>
-        <a href="../index.html"><img src="../imgs/logo.png" alt="hi" width="75px"></a>
-        <a href="../pet-selection.html"><img src="../imgs/pets.png" alt="bye" width="75px"></a>
-        <a href="../Profile Settings/pro-settings.html"><img src="../imgs/pfp.png" alt="tungtung" width="75px"></a>
-        <a href="../Mail/mail.html"><img src="../imgs/mail.png" alt="h" width="75px"></a>
-        <a href="../General Settings/settings.html"><img src="../imgs/settings.png" alt="" width="75px"></a>
-    </nav>
+    <header class="navbar">
+        <div class="bar">
+            <nav>
+                <a href="../index.html" class="home"><img src="../imgs/logo.png" width="75px"></a>
+                <div class="spacer">
+                    <a href="../Pet Selection/pet-selection.html" class="selection"><img src="../imgs/pets.png"
+                            width="75px"></a>
+                    <a href="../Profile Settings/pro-settings.html" class="pfp"><img src="../imgs/pfp.png"
+                            width="75px"></a>
+                    <a href="../Mail/mail.html" class="mail"><img src="../imgs/mail.png" width="75px"></a>
+                    <a href="../General Settings/settings.html" class="settings"><img src="../imgs/settings.png"
+                            width="75px"></a>
+                </div>
+
+
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <h1>Add A Pet!</h1>
+        <div class="add">
+            <input type="file" class="imageUpload" accept="image/*" placeholder="Add a Picture of your pet!">
+            <input type="text" accept="text" placeholder="Pet Name">
+            <input type="date" accept="date" class="birthday">
+            <input type="text" placeholder="Species">
+            <input type="text" placeholder="Breed">
+            <button class="addPetButton">Add Pet</button>
+        </div>
+    </main>
 </body>
- 

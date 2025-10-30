@@ -1,0 +1,29 @@
+
+
+nav{
+    margin: -8px;
+    display: flex;
+    background-color: #CFD9FF;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.home{
+    justify-self:flex-start;
+}
+ 
+body {
+    background-image: url("../imgs/cloudBG.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.imageUpload{
+    border: 2px dashed #CCCCCC;
+    border-radius: 10px;
+    padding: 50px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #F9F9F9;
+}

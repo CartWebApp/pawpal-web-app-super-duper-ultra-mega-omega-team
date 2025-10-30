@@ -1,0 +1,43 @@
+body {
+    display: flex;
+    background-color: white;
+    margin: 0 auto;
+    background-image: url(imgs/PawBG.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+main > img {
+    float: left;
+    margin: 1rem;
+    padding: 2rem;
+}
+
+nav {
+    background-color: #CFD9FF;
+    justify-content: flex-start;
+}
+
+.info > div.boxes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.second > div.endboxes {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+div.endboxes > .graphs {
+    display: flex;
+    flex-flow: row wrap;
+    background-color: white;
+    justify-content: space-around;
+}
+
+div.endboxes > .list {
+    display: flex;
+    flex-flow: row wrap;
+    background-color: 8B8DC4;
+    justify-content: space-around;
+}
