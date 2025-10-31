@@ -2,26 +2,88 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0;
+    background-image: url(imgs/PawBG.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 * {
     box-sizing: border-box;
 }
-.navbar {
-    margin: -8px;
-    display: flex;
-    background-color: #CFD9FF;
-    justify-content: space-between;
-    flex-direction: row;
+img {
     width: 100%;
+    object-fit: cover;
 }
 
-.info > div.boxes {
+a {
+    text-decoration: none;
+}
+.bar {
+    background-color: #CFD9FF;
     display: flex;
-    background-color: red;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.bar > a{
+    width: 100px;
+}
+
+/*Hero text*/
+main {
+    margin: 1rem;
+    margin-top: 2rem;
+}
+main > img {
+    width: 45%;
+    height: auto;
+    float: left;
+    margin: 1rem;
+}
+
+main > .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    align-items:  center;
-    width: 840px;
+}
+main > .hero > .header {
+    text-align: center;
+    font-size: 45px;
+}
+main > .hero > h1 {
+    font-size: 45px;
+}
+main > .hero > p {
+    font-size: 18px;
+    max-width: 600px;
+}
+
+main > .start {
+    display: flex;
+    background-color: #8B8DC4;
+    justify-self: center;
+    color: white;
+    border: none;
+    border-radius: 32px;
+    padding: 1rem 2rem;
+    font-size: 18px;
+    margin: 2rem;
+    a {
+        color: white;
+    }
+}
+/*75px*/
+/*----------------------------------*/
+/* Info boxes*/
+.info > div.cards {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    max-width: 980px;
+    margin: 3rem auto;
+    background-color: gray;
 }
 
 .second > div.endboxes {
