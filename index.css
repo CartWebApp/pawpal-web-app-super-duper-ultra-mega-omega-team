@@ -1,37 +1,41 @@
 body {
     display: flex;
-    background-color: white;
-    margin: 0 auto;
-    background-image: url(imgs/PawBG.png);
-    background-size: cover;
-    background-repeat: no-repeat;
+    flex-direction: column;
+    margin: 0;
 }
 
-main > img {
-    float: left;
-    margin: 1rem;
-    padding: 2rem;
+* {
+    box-sizing: border-box;
 }
-
-nav {
+.navbar {
+    margin: -8px;
+    display: flex;
     background-color: #CFD9FF;
-    justify-content: flex-start;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
 }
 
 .info > div.boxes {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    background-color: red;
+    justify-content: center;
+    align-items:  center;
+    width: 840px;
 }
 
 .second > div.endboxes {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin: 2rem auto;
+    padding: 3rem;
+    width: 100%;
+    background-color: rgb(63, 203, 203);
 }
 
 div.endboxes > .graphs {
     display: flex;
     flex-flow: row wrap;
-    background-color: white;
     justify-content: space-around;
 }
 
