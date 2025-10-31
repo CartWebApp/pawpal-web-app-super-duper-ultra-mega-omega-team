@@ -29,8 +29,9 @@ a {
 .bar > a{
     width: 100px;
 }
-
+/*----------------------------------*/
 /*Hero text*/
+
 main {
     margin: 1rem;
     margin-top: 2rem;
@@ -49,14 +50,14 @@ main > .hero {
     justify-content: center;
 }
 main > .hero > .header {
-    text-align: center;
+    justify-self: flex-end;
+    text-align: left;
     font-size: 45px;
+    gap: 1rem;
 }
-main > .hero > h1 {
-    font-size: 45px;
-}
+
 main > .hero > p {
-    font-size: 18px;
+    font-size: 25px;
     max-width: 600px;
 }
 
@@ -74,23 +75,46 @@ main > .start {
         color: white;
     }
 }
-/*75px*/
+
 /*----------------------------------*/
 /* Info boxes*/
-.info > div.cards {
+
+div.cards {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     max-width: 980px;
     margin: 3rem auto;
-    background-color: gray;
+    border-radius: 32px;
+
 }
 
-.second > div.endboxes {
+div.cards > section {
+    width: 49%;
+    height: auto;
+    background: rgba(182, 192, 236, 0.73);
+
+    border: #6369DD 4px solid;
+    padding: 1rem;
+    border-radius: 32px;
+}
+
+div.cards > section > h2 {
+    font-size: 50px;
+    margin-top: 0;
+    text-align: center;
+}
+div.cards > section > p {
+    font-size: 40px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.second > div.boxes {
     display: grid;
     grid-template-rows: 1fr 1fr;
     margin: 2rem auto;
-    padding: 3rem;
+    padding: 5rem;
     width: 100%;
     background-color: rgb(63, 203, 203);
 }
