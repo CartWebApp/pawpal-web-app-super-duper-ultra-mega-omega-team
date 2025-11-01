@@ -1,37 +1,127 @@
 body {
     display: flex;
-    background-color: white;
-    margin: 0 auto;
+    flex-direction: column;
+    margin: 0;
     background-image: url(imgs/PawBG.png);
-    background-size: cover;
     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
+* {
+    box-sizing: border-box;
+}
+img {
+    width: 100%;
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+}
+.bar {
+    background-color: #CFD9FF;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.bar > a{
+    width: 100px;
+}
+/*----------------------------------*/
+/*Hero text*/
+
+main {
+    margin: 1rem;
+    margin-top: 2rem;
+}
 main > img {
+    width: 45%;
+    height: auto;
     float: left;
     margin: 1rem;
-    padding: 2rem;
 }
 
-nav {
-    background-color: #CFD9FF;
-    justify-content: flex-start;
+main > .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+main > .hero > .header {
+    justify-self: flex-end;
+    text-align: left;
+    font-size: 45px;
+    gap: 1rem;
 }
 
-.info > div.boxes {
+main > .hero > p {
+    font-size: 25px;
+    max-width: 600px;
+}
+
+main > .start {
+    display: flex;
+    background-color: #8B8DC4;
+    justify-self: center;
+    color: white;
+    border: none;
+    border-radius: 32px;
+    padding: 1rem 2rem;
+    font-size: 18px;
+    margin: 2rem;
+    a {
+        color: white;
+    }
+}
+
+/*----------------------------------*/
+/* Info boxes*/
+
+div.cards {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    max-width: 980px;
+    margin: 3rem auto;
+    border-radius: 32px;
+
+}
+
+div.cards > section {
+    width: 49%;
+    height: auto;
+    background: rgba(182, 192, 236, 0.73);
+
+    border: #6369DD 4px solid;
+    padding: 1rem;
+    border-radius: 32px;
+}
+
+div.cards > section > h2 {
+    font-size: 50px;
+    margin-top: 0;
+    text-align: center;
+}
+div.cards > section > p {
+    font-size: 40px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.second > div.boxes {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-.second > div.endboxes {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin: 2rem auto;
+    padding: 5rem;
+    width: 100%;
+    background-color: rgb(63, 203, 203);
 }
 
 div.endboxes > .graphs {
     display: flex;
     flex-flow: row wrap;
-    background-color: white;
     justify-content: space-around;
 }
 
