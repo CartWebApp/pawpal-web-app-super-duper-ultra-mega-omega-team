@@ -1,0 +1,19 @@
+nav{
+    margin: -8px;
+    display: flex;
+    background-color: #CFD9FF;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.home{
+    justify-self:flex-start;
+}
+ 
+body {
+    background-image: url("../imgs/cloudBG.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
