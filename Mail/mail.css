@@ -1,0 +1,14 @@
+body {
+    background-image: url("../imgs/cloudBG.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+header > div.navbar {
+    margin: -8px;
+    display: flex;
+    background-color: #CFD9FF;
+    justify-content: space-between;
+    flex-direction: row;
+}
