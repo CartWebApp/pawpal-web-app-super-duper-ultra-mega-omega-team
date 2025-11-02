@@ -13,17 +13,77 @@ nav{
 }
  
 body {
+
     background-image: url("../imgs/cloudBG.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }
 
-.imageUpload{
-    border: 2px dashed #CCCCCC;
+
+
+
+main{
+    gap: 50px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr 20px;
+    grid-template-areas: 
+    ". h h ."
+    ". img info ."
+    ". add add .";
+    
+    
+}
+h1{
+    margin-bottom: -30px;
+    grid-area: h; 
+    font-family:sans-serif;
+}
+
+
+.pet-info{
+    grid-area: info;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 2px solid #7378D3;
+    width: 438.441px;
+    height: 388.537px;
     border-radius: 10px;
-    padding: 50px;
+}
+
+.pet-img{
+    grid-area: img;
+    color: rgba(240, 248, 255, 0);
+    border: 2px solid #7378D3;
+    border-radius: 10px;
+    width: 438.441px;
+    height: 388.537px;
     text-align: center;
     cursor: pointer;
-    background-color: #F9F9F9;
+    background-image: url(../imgs/plus.png);
+    background-size: cover;
+
 }
+
+.addPetButton{
+   grid-area: add;
+   background: #7378D3;
+   width: 150px;
+   margin-left: 390px;
+   height: 30px;
+   border-radius: 10px;
+   
+}
+
+[type="text"], [type="date"]{
+    margin: 0px 25px;
+    border-radius: 10px;
+    border: 2px solid #7378D3;
+    background-color: #CFD9FF;
+    height: 60px;
+}
+
+

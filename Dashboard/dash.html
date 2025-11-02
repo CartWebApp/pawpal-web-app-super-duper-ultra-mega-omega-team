@@ -3,17 +3,74 @@
 
 <head>
     <meta charset="UTF-8">
-    <title> Dashboard  </title>
-    <link rel="stylesheet" href="styles.css">
+    <title> Dashboard </title>
+    <link rel="stylesheet" href="dash.css">
 </head>
 
 <body>
-    <nav>
-        <a href="../index.html"><img src="../imgs/logo.png" alt="hi" width="75px"></a>
-        <a href="../Pet Selection/pet-selection.html"><img src="../imgs/pets.png" alt="bye" width="75px"></a>
-        <a href="../Profile Settings/pro-settings.html"><img src="../imgs/pfp.png" alt="tungtung" width="75px"></a>
-        <a href="../Mail/mail.html"><img src="../imgs/mail.png" alt="h" width="75px"></a>
-        <a href="../General Settings/settings.html"><img src="../imgs/settings.png" alt="" width="75px"></a>
-    </nav>
+    <!--Navbar once again-->
+    <header class="navbar">
+        <div class="bar">
+            <nav>
+                <a href="../index.html" class="home"><img src="../imgs/logo.png" width="75px"></a>
+                <div class="spacer">
+                    <a href="../Pet Selection/pet-selection.html" class="selection"><img src="../imgs/pets.png"
+                            width="75px"></a>
+                    <a href="../Profile Settings/pro-settings.html" class="pfp"><img src="../imgs/pfp.png"
+                            width="75px"></a>
+                    <a href="../Mail/mail.html" class="mail"><img src="../imgs/mail.png" width="75px"></a>
+                    <a href="../General Settings/settings.html" class="settings"><img src="../imgs/settings.png"
+                            width="75px"></a>
+                </div>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+        <h2>Bruno</h2>
+        <img class="petImg" src="/imgs/bruno.png" >
+        <div class="daily-tasks">
+          <h3>Daily Tasks</h3>
+          <!--Adding the daily tasks for bruno in checkbox form-->
+        <ul>
+            <li>
+                <input type="checkbox" id="blunch" name="tasks" value="lunch">
+                <label for="blunch">Give Bruno lunch</label>
+            </li> 
+            <li>
+                <input type="checkbox" id="bwalk" name="tasks" value="walk">
+                <label for="bwalk">Take Bruno on a walk</label>
+            </li>
+            <li>
+                <input type="checkbox" id="btreat" name="tasks" value="treat">
+                <label for="btreat">Give Bruno a treat</label>
+            </li>
+            <li>
+                <input type="checkbox" id="bbath" name="tasks" value="groom">
+                <label for="bbath">Give Bruno a Bath</label>
+            </li>
+            <li>
+                <input type="checkbox" id="bpark" name="tasks" value="park">
+                <label for="bpark">Take Bruno to the park!</label>
+            </li>
+        </ul>
+    </div>
+
+    <div class="activity">
+        <!--Making the recent activity part of the dash-->
+        <h3>Recent Activity</h3>
+        <ul>
+            <li>You walked Bruno</li>
+            <li>You gave Bruno a bath</li>
+            <li>You took Bruno to the park</li>
+        </ul>
+    </div>
+
+    <div class="appointments">
+         
+    </div>
+
+
+    </main>
 </body>
- 
