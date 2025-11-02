@@ -11,6 +11,7 @@ body {
 * {
     box-sizing: border-box;
 }
+
 img {
     width: 100%;
     object-fit: cover;
@@ -110,24 +111,56 @@ div.cards > section > p {
     text-align: center;
 }
 
-.second > div.boxes {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    margin: 2rem auto;
-    padding: 5rem;
+/* last banners*/
+
+.end > div.boxes {
+    display: flex;
+    flex-direction: column;
+}
+
+.end > .boxes > p {
+    margin: 1rem;
+}
+.graphs {
+    background-color: white;
     width: 100%;
-    background-color: rgb(63, 203, 203);
+    padding: 2rem;
+}
+.graphs > h2{
+    text-align: center;
+    font-size: 40px;
 }
 
-div.endboxes > .graphs {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
+.graphs > .text > p {
+    font-size: 40px;
 }
 
-div.endboxes > .list {
-    display: flex;
-    flex-flow: row wrap;
-    background-color: 8B8DC4;
-    justify-content: space-around;
+.graphs > .text > img {
+    float: left;
+    margin: 1rem;
+    width: 50%;
+    border-radius: 32px;
+    border: #6369DD solid 5px;
+}
+
+.list {
+    padding: 2rem;
+    background-color: #8B8DC4;
+}
+.list > h2{
+    text-align: center;
+    font-size: 40px;
+    justify-self: center;
+}
+
+.list > .text > p {
+    font-size: 40px;
+    margin-top: 5rem;
+}
+
+.list > .text > img {
+    float: left;
+    margin: 1rem;
+    width: 50%;
+    border-radius: 32px;
 }
