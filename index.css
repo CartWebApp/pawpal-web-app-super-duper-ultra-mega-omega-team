@@ -11,6 +11,7 @@ body {
 * {
     box-sizing: border-box;
 }
+
 img {
     width: 100%;
     object-fit: cover;
@@ -112,11 +113,14 @@ div.cards > section > p {
 
 /* last banners*/
 
-.second > div.boxes {
+.end > div.boxes {
     display: flex;
     flex-direction: column;
 }
 
+.end > .boxes > p {
+    margin: 1rem;
+}
 .graphs {
     background-color: white;
     width: 100%;
@@ -129,7 +133,6 @@ div.cards > section > p {
 
 .graphs > .text > p {
     font-size: 40px;
-    margin-top: 5rem;
 }
 
 .graphs > .text > img {
@@ -150,12 +153,12 @@ div.cards > section > p {
     justify-self: center;
 }
 
-.list > .text >p {
+.list > .text > p {
     font-size: 40px;
     margin-top: 5rem;
 }
 
-.list > .text >img {
+.list > .text > img {
     float: left;
     margin: 1rem;
     width: 50%;
