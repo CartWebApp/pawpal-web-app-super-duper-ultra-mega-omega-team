@@ -1,3 +1,6 @@
+h3{
+    text-align: center;
+}
 nav{
     /*navbar*/
     margin: -8px;
@@ -20,10 +23,76 @@ body {
     background-attachment: fixed;
 }
 
-
-
-
 li{
     /*I do NOT like bullet points*/
     list-style-type: none;
 }
+
+
+main{
+    gap: 15px;
+    display: grid;
+    grid-template-columns: 100px 1fr 1fr 1fr 100px;
+    grid-template-rows: 100px 1.5fr 1fr 100px;
+    grid-template-areas: 
+    ". . h . ."
+    ". bruno recent appt ."
+    ". daily daily appt ."
+    ". . activ . .";
+}
+
+h1{
+    grid-area: h;
+}
+
+.petImg{
+    width: 500px;
+    grid-area: bruno;
+    border-radius: 10px;
+    border: 2px solid #7378D3;
+}
+
+.daily-tasks{
+    background-color: #CFD9FF;
+    grid-area: daily;
+    border: 2px solid #7378D3;
+    border-radius: 10px;
+}
+
+.recent{
+    background-color: #CFD9FF;
+    grid-area: recent;
+    border: 2px solid #7378D3;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.appointments{
+    background-color: #CFD9FF;
+    grid-area: appt;
+    border: 2px solid #7378D3;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.graphs{
+    grid-area: activ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
