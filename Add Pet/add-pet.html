@@ -30,19 +30,19 @@
 
     <main>
         <h1>Add A Pet!</h1>
-        <input type="file" class="pet-img" accept="image/*" placeholder="Upload Pet Image">
+        <input type="file" class="pet-img" accept="image/*" placeholder="Upload Pet Image" name="petImage">
         <div class="pet-info">
-            <input type="text" accept="text" placeholder="Pet Name">
-            <input type="date" accept="date" class="birthday">
-            <input type="text" placeholder="Species">
-            <input type="text" placeholder="Breed">
+            <input type="text" name="petName" placeholder="Pet Name" required>
+            <input type="date" name="birthday" class="birthday" required>
+            <input type="text" name="species" placeholder="Species" required>
+            <input type="text" name="breed" placeholder="Breed" required>
         </div>
         <button class="addPetButton">Add Pet</button>
-        <!-- Status message container for user feedback -->
-        <div id="status-message">Pet Added</div>
+
     </main>
 
-    <!-- MANDATORY: Link the page script -->
+    <!-- MANDATORY: Link Firebase and the page script -->
+    <script type="module" src="../firebase-config.js"></script>
     <script type="module" src="add-pet.js"></script>
 </body>
 

@@ -19,16 +19,16 @@
                 <section class="text">
                     <h1> Sign Up</h1>
                     <p>Email</p>
-                    <input />
+                    <input id="signup-email" type="email" required />
                     <p>Username</p>
-                    <input />
+                    <input id="signup-username" type="text" required />
                     <p>Password</p>
-                    <input />
+                    <input id="signup-password" type="password" required />
                     <p>Confirm Password</p>
-                    <input />
+                    <input id="signup-confirm" type="password" required />
                 </section>
                 <section class="new">
-                    <a href="../Pet Selection/pet-selection.html" class="create">Create Account</a>
+                    <button class="create">Create Account</button>
                 </section>
                 <section class="made">
                     <p>Already have a account? <a href="../Login/login.html">Sign in here</a></p>
@@ -45,4 +45,7 @@
             </div>
         </article>
     </main>
+</main>
+<script type="module" src="../firebase-config.js"></script>
+<script type="module" src="sign.js"></script>
 </body>

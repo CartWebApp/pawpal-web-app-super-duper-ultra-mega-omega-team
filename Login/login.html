@@ -18,13 +18,13 @@
             <div class="flexbox">
                 <section class="text">
                     <h1> Sign In</h1>
-                    <p>Email/Username</p>
-                    <input/>
+                    <p>Email</p>
+                    <input id="login-email" type="email" required />
                     <p>Password</p>
-                    <input/>
+                    <input id="login-password" type="password" required />
                 </section>
                 <section class="new">
-                    <a href="../Pet Selection/pet-selection.html" class="in">Sign In</a>
+                    <button class="in">Sign In</button>
                 </section>
                 <section class="sub">
                 <p>OR</p>
@@ -42,4 +42,7 @@
             </div>
         </article>
     </main>
+</main>
+<script type="module" src="../firebase-config.js"></script>
+<script type="module" src="login.js"></script>
 </body>

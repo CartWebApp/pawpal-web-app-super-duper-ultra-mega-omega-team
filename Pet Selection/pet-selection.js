@@ -1,96 +1,98 @@
-import { db, getPetsCollectionPath, getCurrentUserId } from './firebase-config.js';
-import { collection, query, onSnapshot } from 'https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js';
+import { db, getPetsCollectionPath, getCurrentUserId } from '../firebase-config.js';
+import { collection, onSnapshot } from 'https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js';
 
-// Reference to the container where pet cards will be added
-const petContainer = document.querySelector('.add-pet').parentNode; 
-const addPetBox = document.querySelector('.add-pet');
-const placeholderPetImage = "https://placehold.co/150x150/7378D3/ffffff?text=Pet"; // A nice placeholder
+const petContainer = document.getElementById('pet-list-container');
+const placeholderPetImage = "https://placehold.co/150x150/7378D3/ffffff?text=Pet";
 
-// Wait for authentication before trying to load data
-getCurrentUserId().then(userId => {
-    loadPets(userId);
-});
-
-/**
- * Creates an HTML element for a single pet card.
- * @param {Object} pet - The pet data object.
- * @returns {HTMLElement} The created pet card element.
- */
 function createPetCard(pet) {
     const card = document.createElement('div');
     card.className = 'pet-card';
-    card.style.display = 'flex';
-    card.style.flexDirection = 'column';
-    card.style.alignItems = 'center';
-    card.style.gap = '10px';
-    card.style.padding = '20px';
-    card.style.backgroundColor = '#CFD9FF';
-    card.style.border = '2px solid #7378D3';
-    card.style.borderRadius = '10px';
-    card.style.cursor = 'pointer';
-    card.style.width = '200px';
+    card.style.cssText = `
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        margin: 10px;
+        background-color: #CFD9FF;
+        border: 2px solid #7378D3;
+        border-radius: 10px;
+        cursor: pointer;
+        width: 200px;
+    `;
 
-    const petImage = document.createElement('img');
-    petImage.src = pet.imageUrl || placeholderPetImage;
-    petImage.alt = `${pet.name} profile picture`;
-    petImage.width = 150;
-    petImage.height = 150;
-    petImage.style.borderRadius = '50%';
-    petImage.style.objectFit = 'cover';
-    petImage.onerror = function() {
-        this.src = placeholderPetImage;
-    };
+    const img = document.createElement('img');
+    img.src = pet.imageUrl || placeholderPetImage;
+    img.alt = `${pet.name}'s profile picture`;
+    img.style.cssText = `
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 10px;
+    `;
+    img.onerror = () => img.src = placeholderPetImage;
 
+    const name = document.createElement('h3');
+    name.textContent = pet.name;
+    name.style.margin = '0';
 
-    const petName = document.createElement('h3');
-    petName.textContent = pet.name;
-    petName.style.margin = '0';
+    card.appendChild(img);
+    card.appendChild(name);
 
-    // Set up the click handler to navigate to the dashboard with the pet's ID
     card.addEventListener('click', () => {
-        // We use localStorage to save the active pet ID temporarily for the dashboard
         localStorage.setItem('activePetId', pet.id);
-        window.location.href = `../Dash/dash.html?petId=${pet.id}`;
+        window.location.href = `../Dashboard/dash.html?petId=${pet.id}`;
     });
-
-    card.appendChild(petImage);
-    card.appendChild(petName);
 
     return card;
 }
 
+async function initializePetSelection() {
+    try {
+        await getCurrentUserId(); // Wait for auth
+        const petsPath = getPetsCollectionPath();
+        if (!petsPath) {
+            alert("Could not get pets collection path. Are you signed in?");
+            console.error("No petsPath", { petsPath });
+            return;
+        }
 
-/**
- * Sets up a real-time listener to load and display pets from Firestore.
- */
-function loadPets() {
-    const petsCollectionPath = getPetsCollectionPath();
-    if (!petsCollectionPath) return;
+        const petsQuery = collection(db, petsPath);
 
-    const petsQuery = query(collection(db, petsCollectionPath));
+        // Set up real-time listener
+        onSnapshot(petsQuery, (snapshot) => {
+            // Clear existing pet cards but keep the add-pet button
+            const existingCards = document.querySelectorAll('.pet-card');
+            existingCards.forEach(card => card.remove());
 
-    // onSnapshot listens for real-time changes
-    onSnapshot(petsQuery, (querySnapshot) => {
-        console.log("Real-time pet data update received.");
-        // Clear all existing pet cards before rendering the new list, 
-        // but keep the 'Add a Pet' box.
-        
-        // Find all elements that are NOT the addPetBox or the initial header/nav
-        const existingCards = petContainer.querySelectorAll('.pet-card');
-        existingCards.forEach(card => card.remove());
-
-        querySnapshot.forEach((doc) => {
-            const pet = doc.data();
-            const petCard = createPetCard(pet);
-            
-            // Insert the new pet card *before* the 'Add a Pet' box
-            petContainer.insertBefore(petCard, addPetBox);
+            let found = false;
+            snapshot.forEach((doc) => {
+                found = true;
+                const pet = { id: doc.id, ...doc.data() };
+                const card = createPetCard(pet);
+                // Insert before the add-pet button
+                petContainer.insertBefore(card, document.querySelector('.add-pet'));
+            });
+            if (!found) {
+                const msg = document.createElement('p');
+                msg.textContent = "No pets found. Add one!";
+                msg.style.color = '#2E4088';
+                petContainer.insertBefore(msg, document.querySelector('.add-pet'));
+            }
+        }, (err) => {
+            alert("Error loading pets: " + err.message);
+            console.error("onSnapshot error:", err);
         });
 
-        if (querySnapshot.empty) {
-            console.log("No pets found. Time to add one!");
-        }
-    }, (error) => {
-        console.error("Error listening to pets collection:", error);
-    });
+    } catch (error) {
+        alert("Error loading pets: " + error.message);
+        console.error("Error loading pets:", error);
+        const errorMsg = document.createElement('p');
+        errorMsg.textContent = "Sorry, we couldn't load your pets. Please try refreshing the page.";
+        errorMsg.style.color = 'red';
+        petContainer.insertBefore(errorMsg, document.querySelector('.add-pet'));
+    }
 }
+
+// Initialize when the page loads
+document.addEventListener('DOMContentLoaded', initializePetSelection);

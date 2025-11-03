@@ -17,3 +17,59 @@ body {
     background-attachment: fixed;
 }
 
+#pet-list-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content: center;
+}
+
+.pet-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 10px;
+    background-color: #CFD9FF;
+    border: 2px solid #7378D3;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 200px;
+    transition: transform 0.2s;
+}
+
+.pet-card:hover {
+    transform: scale(1.05);
+}
+
+.pet-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.pet-card h3 {
+    margin: 0;
+    color: #2E4088;
+}
+
+.add-pet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 10px;
+    background-color: #EFF3FF;
+    border: 2px dashed #7378D3;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 200px;
+    transition: background-color 0.2s;
+}
+
+.add-pet:hover {
+    background-color: #CFD9FF;
+}
