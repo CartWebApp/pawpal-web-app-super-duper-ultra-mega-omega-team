@@ -110,11 +110,18 @@ input {
     text-align: center;
 }
 
-.flexbox > .new > .in {
+/*.flexbox > .new > .in {
     margin-top: 1rem;
     padding: 1rem;
     color: white;
     border-radius: 10px;
     border: 3px solid #6369DD;  
     background-color: #7378D3;
+}*/
+
+.flexbox > .external {
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: flex-end;
 }
+
