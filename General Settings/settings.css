@@ -7,7 +7,7 @@ body {
     background-size: cover;
 }
 
-/* {
+* {
     box-sizing: border-box;
 }
 
@@ -28,43 +28,57 @@ nav {
 /*---------------------*/
 /* Assits Positions*/
 
-main {
+article {
     margin: 2rem;
 }
 
 /*---------------------*/
-/*Button settings */
-main > button {
-    margin-right: 5px;
+/*Sidebar*/
+
+.sidebar {
+    display: flex;
+    flex-flow: column wrap;
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    align-items: center;
+    left: 0;
+    top: 94px;
+    gap: 15px;
+    padding-top: 16px;
+    border: 3px solid #7378D3;
+    background-color: #EFF3FF;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.sidebar > a {
     padding: 10px;
-    width: 10%;
+    width: 90%;
+    text-decoration: none;
+    text-align: center;
     color: white;
     border-radius: 10px;
     border: 2px solid #757ACB;
     background: #2E4088;
 }
 
-main > button:hover {
+.sidebar > a:hover {
     background-color: #7378D3;
 }
 
-/*---------------------*/
-/*Mail text*/
- .text {
-    margin: 2rem;
-    line-height: 2rem;
- }
+/*--------------------*/
+/* Text */
 
-.text > p {
-    padding: 1rem;
-    width: 75%;
-    border-radius: 10px;
-    border: 3px solid #7378D3;
-    background: #CFD9FF;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+.text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 11rem;
+    margin-top: -2rem;
+}
+.main {
+    gap: 35px;
 }
 
-.text > h3:nth-of-type(2n) {
-    background-color: red;
-    justify-self: flex-end;
+.main > button {
+    width: 10%;
 }
