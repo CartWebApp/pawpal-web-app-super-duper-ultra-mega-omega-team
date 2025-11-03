@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title> Activity Graphs </title>
+    <link rel="stylesheet" href="graphs.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="bar">
+            <nav>
+                <a href="../index.html" class="home"><img src="../imgs/logo.png" width="75px"></a>
+                <div class="spacer">
+                    <a href="../Pet Selection/pet-selection.html" class="selection"><img src="../imgs/pets.png"
+                            width="75px"></a>
+                    <a href="../Profile Settings/pro-settings.html" class="pfp"><img src="../imgs/pfp.png"
+                            width="75px"></a>
+                    <a href="../Mail/mail.html" class="mail"><img src="../imgs/mail.png" width="75px"></a>
+                    <a href="../General Settings/settings.html" class="settings"><img src="../imgs/settings.png"
+                            width="75px"></a>
+                </div>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+        <div class="select">
+            <select name="graph" id="graph-selector">
+                <option value="none">Select Activity</option>
+                <option value="walk">Miles Walked</option>
+                <option value="weight">Weight Gained</option>
+                <option value="outside">Time Spent Outdoors</option>
+            </select>
+        </div>
+
+        <div class="walk-graph">
+            <h3>Weekly Miles Walked</h3>
+            <img class="graph-img" src="/imgs/walk-graph.png" width="500px">
+        </div>
+
+        <div class="weight-graph">
+            <h3>Weekly Weight Gained</h3>
+            <img class="graph-img" src="/imgs/weight-graph.png" width="500px">
+        </div>
+
+        <div class="outdoors-graph">
+            <h3>Weekly Time Spent Outdoors</h3>
+            <img class="graph-img" src="/imgs/outdoors-graph.png" width="500px">
+        </div>
+    </main>
+<script src="graphs.js"></script>
+</body>
+</html>

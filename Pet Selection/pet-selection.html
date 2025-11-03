@@ -3,35 +3,49 @@
 
 <head>
     <meta charset="UTF-8">
-    <title> Pet Selection Page  </title>
+    <title> Pet Selection Page </title>
     <link rel="stylesheet" href="pet-selection.css">
 </head>
 
 <body>
-<header class="navbar">
+    <header class="navbar">
         <div class="bar">
             <nav>
                 <a href="../index.html" class="home"><img src="../imgs/logo.png" width="75px"></a>
-                <div class="spacer">
-                    <a href="../Pet Selection/pet-selection.html" class="selection"><img src="../imgs/pets.png"
-                            width="75px"></a>
-                    <a href="../Profile Settings/pro-settings.html" class="pfp"><img src="../imgs/pfp.png"
-                            width="75px"></a>
-                    <a href="../Mail/mail.html" class="mail"><img src="../imgs/mail.png" width="75px"></a>
-                    <a href="../General Settings/settings.html" class="settings"><img src="../imgs/settings.png"
-                            width="75px"></a>
-                </div>
+        <div class="spacer">
+            <a href="../Pet Selection/pet-selection.html" class="selection"><img src="../imgs/pets.png"
+                width="75px"></a>
+            <a href="../Profile Settings/pro-settings.html" class="pfp"><img src="../imgs/pfp.png"
+                width="75px"></a>
+            <a href="../Mail/mail.html" class="mail"><img src="../imgs/mail.png" width="75px"></a>
+            <a href="../General Settings/settings.html" class="settings"><img src="../imgs/settings.png"
+                width="75px"></a>
+        </div>
 
 
             </nav>
         </div>
     </header>
 
+    <main>
+        <!-- Container for displaying pets -->
+        <div id="pet-list-container">
+            <!-- Pet cards will be dynamically inserted here by JavaScript -->
+            
+            <!-- Add Pet Button -->
+            <div class="add-pet">
+                <h3>Add a Pet!</h3>
+                <a href="../Add Pet/add-pet.html"> 
+                    <img src="../imgs/plus.png" alt="Add a new pet" width="150px">
+                </a>
+            </div>
+        </div>
+    </main>
 
-    <div class="add-pet">
-        
-        <h3>Add a Pet!</h3>
-        <a href="../Add Pet/add-pet.html"> <img src="../imgs/plus.png" width="150px"></a>
-    </div>
+    <!-- MANDATORY: Link the Firebase config and the page script -->
+    <script type="module" src="../firebase-config.js"></script>
+    <script type="module" src="pet-selection.js"></script>
 
 </body>
+
+</html>
