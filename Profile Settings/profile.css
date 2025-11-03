@@ -1,28 +1,23 @@
-body {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    background-image: url(../imgs/cloudBG.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-/*---------------------*/
-/* Navbar */
-
-nav {
+nav{
+    /*navbar*/
+    margin: -8px;
     display: flex;
     background-color: #CFD9FF;
+    justify-content: space-between;
     flex-direction: row;
-    justify-content: flex-end;
 }
 
-.home {
-    justify-self: flex-start;
+.home{
+    /*Navbar fix to get the pawpal logo on the left*/
+    justify-self:flex-start;
+}
+ 
+body {
+    /*Basic bg settings*/
+    background-image: url("../imgs/cloudBG.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 /*---------------------*/
@@ -53,7 +48,7 @@ article {
 
 .sidebar > a {
     padding: 10px;
-    width: 90%;
+    width: 70%;
     text-decoration: none;
     text-align: center;
     color: white;
