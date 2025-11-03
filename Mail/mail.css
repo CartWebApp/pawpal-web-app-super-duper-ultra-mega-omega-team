@@ -1,11 +1,22 @@
-body {
+nav{
+    /*navbar*/
+    margin: -8px;
     display: flex;
-    flex-direction: column;
-    margin: 0;
-    background-image: url(../imgs/cloudBG.png);
+    background-color: #CFD9FF;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.home{
+    /*Navbar fix to get the pawpal logo on the left*/
+    justify-self:flex-start;
+}
+ 
+body {
+    /*Basic bg settings*/
+    background-image: url("../imgs/cloudBG.png");
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
 }
 
 * {
@@ -26,30 +37,37 @@ a {
     flex-wrap: wrap;
     padding: 0;
 }
-
-.bar > a{
-    width: 100px;
-}
-
+/*---------------------*/
 /* Assits Positions*/
 
 main {
     margin: 2rem;
 }
 
+/*---------------------*/
+/*Button settings */
+
 main > button {
+    margin-right: 5px;
     padding: 10px;
     width: 10%;
     color: white;
     border-radius: 10px;
     border: 2px solid #757ACB;
     background: #2E4088;
-
 }
 
- .text {
-    margin: 2rem;
+main > button:hover {
+    background-color: #7378D3;
+}
 
+/*---------------------*/
+/*Mail text*/
+
+ .text {
+    display: flex;
+    flex-flow: column wrap;
+    margin-left: 2rem;
  }
 
 .text > p {

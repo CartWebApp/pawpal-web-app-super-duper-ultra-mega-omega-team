@@ -1,0 +1,120 @@
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    background-image: url(../imgs/PawBG.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+}
+.bar {
+    background-color: #CFD9FF;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.bar > a{
+    width: 100px;
+}
+
+/*----------------------*/
+/*Sign Up box*/
+
+.flexbox {
+    justify-self: center;
+    text-align: center;
+    border-radius: 20px;
+    border: 3px solid #7378D3;
+    background: #F7F7F7;
+    padding: 1rem;
+    width: 650px;
+    margin: 2rem;
+}
+
+ .flexbox > .text > h1 {
+    margin-top: -2rem;
+    margin-bottom: 2rem;
+ }
+
+ .flexbox > .text {
+    margin: 2rem;
+ }
+
+input {
+    padding: 1rem;
+    width: 75%;
+    border-radius: 10px;
+    border: 2px solid #7378D3;
+    background-color: #CFD9FF;
+}
+
+.flexbox >.text > p {
+    text-align: left;
+    margin-left: 75px;
+}
+.new > .create {
+    margin-top: 1rem;
+    padding: 1rem;
+    color: white;
+    border-radius: 10px;
+    border: 3px solid #6369DD;  
+    background-color: #7378D3;
+}
+
+.new > a.create:hover {
+    cursor: pointer;
+    background-color: #6b71d7;
+}
+
+/*Login link*/
+
+.flexbox > .made {
+    margin: 3rem;
+}
+
+.flexbox > .external {
+    flex-direction: row;
+    text-align: right;
+    background-color: red;
+    padding: 1rem;
+    width: 25%;
+    margin: 1rem;
+    border: 2px solid black;
+}
+
+.flexbox > .external > a {
+    text-decoration: none;
+    color: white;
+}
+
+/*-----------------------*/
+/*For the Login page*/
+
+.flexbox > .sub > p {
+    margin-top: 2rem;
+    top: 1rem;
+    text-align: center;
+}
+
+.flexbox > .new > .in {
+    margin-top: 1rem;
+    padding: 1rem;
+    color: white;
+    border-radius: 10px;
+    border: 3px solid #6369DD;  
+    background-color: #7378D3;
+}
