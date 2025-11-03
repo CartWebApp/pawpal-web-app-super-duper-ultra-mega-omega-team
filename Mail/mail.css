@@ -1,6 +1,8 @@
 nav{
     /*navbar*/
     margin: -8px;
+    width: 100%;
+    padding: 5px;
     display: flex;
     background-color: #CFD9FF;
     justify-content: space-between;
@@ -17,15 +19,12 @@ body {
     background-image: url("../imgs/cloudBG.png");
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
 }
 
 * {
     box-sizing: border-box;
-}
-
-img {
-    width: 100%;
-    object-fit: cover;
 }
 
 a {
@@ -77,20 +76,10 @@ main > button:hover {
     border: 3px solid #7378D3;
     background: #CFD9FF;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-<<<<<<< HEAD
-    margin-bottom: 2rem;
-    margin-bottom: 3rem;
 }
 
-.text > h3 {
-    margin-bottom: -5px;
-}
-.text > h3:nth-of-type(even) {
-    margin-top: 1rem;
-    align-self: center;
+.cards > .text > .time {
     text-align: right;
-    margin-top: -75px;
-    margin-right: -920px;
-=======
->>>>>>> 062ba8e44b230853a934df78a57672e084f025b8
+    margin-right: 90px;
+    margin-top: -48px;
 }

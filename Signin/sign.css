@@ -66,7 +66,7 @@ input {
     text-align: left;
     margin-left: 75px;
 }
-.new > .create {
+.new >  a {
     margin-top: 1rem;
     padding: 1rem;
     color: white;
@@ -86,12 +86,13 @@ input {
     margin: 3rem;
 }
 
-.flexbox > .external {
-    flex-direction: row;
-    text-align: right;
-    background-color: red;
-    padding: 1rem;
+.flexbox > .sub > div > .external{
+    flex-flow: row wrap;
+    background-color: white;
+    color: black;
     width: 25%;
+    justify-content: space-between;
+    padding: 1rem;
     margin: 1rem;
     border: 2px solid black;
 }
@@ -104,22 +105,23 @@ input {
 /*-----------------------*/
 /*For the Login page*/
 
-.flexbox > .sub > p {
+.signup > .flexbox > .sub > a {
     margin-top: 2rem;
     top: 1rem;
     text-align: center;
 }
 
-/*.flexbox > .new > .in {
+.flexbox > .new > .in > a {
+    text-decoration: none;
     margin-top: 1rem;
     padding: 1rem;
     color: white;
     border-radius: 10px;
     border: 3px solid #6369DD;  
     background-color: #7378D3;
-}*/
+}
 
-.flexbox > .external {
-    display: flex;
-    align-items: flex-end;
+.new > .in > a:hover {
+    cursor: pointer;
+    background-color: #6b71d7;
 }

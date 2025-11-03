@@ -19,6 +19,7 @@ body {
     background-size: cover;
     background-attachment: fixed;
 }
+
 /*---------------------*/
 /* Assits Positions*/
 
@@ -32,7 +33,7 @@ article {
 .sidebar {
     display: flex;
     flex-flow: column wrap;
-    height: 790px;
+    height: 100%;
     width: 160px;
     position: absolute;
     align-items: center;
@@ -73,7 +74,7 @@ article {
     gap: 35px;
 }
 
-.btns > .main > button {
+.text > .btns > .main > button {
     display: flex;
     margin-bottom: 2rem;
     width: 50px;
@@ -82,37 +83,14 @@ article {
     border: 2px solid #000;
     background: #F00;
 }
-<<<<<<< HEAD
-
-/*-------------------------------*/
-/*Text for buttons*/
+.text > .btns > .main > button:hover {
+    cursor: pointer;
+    background: #0F0;
+}
 
 .text > .btns > .main > h3 {
-    display: flex;
-    flex-direction: column;
-    align-items: right;
-    margin-top: -57px;
-    margin-left: 75px;
-=======
-nav{
-    /*navbar*/
-    margin: -8px;
-    display: flex;
-    background-color: #CFD9FF;
-    justify-content: space-between;
-    flex-direction: row;
-}
-
-.home{
-    /*Navbar fix to get the pawpal logo on the left*/
-    justify-self:flex-start;
-}
- 
-body {
-    /*Basic bg settings*/
-    background-image: url("../imgs/cloudBG.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
->>>>>>> 062ba8e44b230853a934df78a57672e084f025b8
+    text-align: left;
+    margin-left: 4rem;
+    margin-bottom: -15px;
+    
 }
