@@ -5,6 +5,7 @@ body {
     background-image: url(../imgs/cloudBG.png);
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 * {

@@ -10,6 +10,7 @@
 <body>
     <header class="navbar">
         <nav class="bar">
+            <!-- NOTE: Using '#' for home link for now, assuming index.html is root -->
             <a href="index.html" class="home"><img src="../imgs/logo.png" width="75px"></a>
         </nav>
     </header>
@@ -20,6 +21,7 @@
             <h2 class="header">Wellness made simple, one paw at a time</h2>
             <p>The Ultimate pet health tracking software for your fuzzy little or big friends. </p>
         </section>
+        <!-- The href will be updated by the index.js script on load -->
         <button class="start"><a href="#">Get Started</a></button>
     </main>
     <article class="info">
@@ -55,6 +57,10 @@
             </section>
         </div>
     </article>
+
+    <!-- MANDATORY: Link the Firebase config and the page script -->
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="index.js"></script>
 </body>
 
 </html>

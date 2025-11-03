@@ -1,0 +1,43 @@
+nav{
+    /*navbar*/
+    margin: -8px;
+    display: flex;
+    background-color: #CFD9FF;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.home{
+    /*Navbar fix to get the pawpal logo on the left*/
+    justify-self:flex-start;
+}
+ 
+body {
+    /*Basic bg settings*/
+    background-image: url("../imgs/cloudBG.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Hide all graphs by default */
+.walk-graph,
+.weight-graph,
+.outdoors-graph {
+    display: none;
+}
+
+/* Show only the active one */
+.active-graph {
+    display: block;
+    border: 2px solid #7378D3;
+    padding: 20px;
+    max-width: fit-content;
+}
+
+[src~="graph"]{
+    width: 500px;
+    border-radius: 10px;
+}
+
+

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title> Add a Pet </title>
     <link rel="stylesheet" href="add-pet.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -29,7 +30,7 @@
 
     <main>
         <h1>Add A Pet!</h1>
-        <input type="file" class="pet-img" accept="image/*" placeholder=>
+        <input type="file" class="pet-img" accept="image/*" placeholder="Upload Pet Image">
         <div class="pet-info">
             <input type="text" accept="text" placeholder="Pet Name">
             <input type="date" accept="date" class="birthday">
@@ -37,6 +38,12 @@
             <input type="text" placeholder="Breed">
         </div>
         <button class="addPetButton">Add Pet</button>
+        <!-- Status message container for user feedback -->
+        <div id="status-message">Pet Added</div>
     </main>
 
+    <!-- MANDATORY: Link the page script -->
+    <script type="module" src="add-pet.js"></script>
 </body>
+
+</html>

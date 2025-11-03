@@ -3,12 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <title> Pet Selection Page  </title>
+    <title> Pet Selection Page </title>
     <link rel="stylesheet" href="pet-selection.css">
 </head>
 
 <body>
-<header class="navbar">
+    <header class="navbar">
         <div class="bar">
             <nav>
                 <a href="../index.html" class="home"><img src="../imgs/logo.png" width="75px"></a>
@@ -27,11 +27,20 @@
         </div>
     </header>
 
-
-    <div class="add-pet">
+    <!-- New Container for pets and the add-pet button -->
+    <main id="pet-list-container" style="display: flex; gap: 20px; flex-wrap: wrap; padding: 20px; justify-content: center;">
         
-        <h3>Add a Pet!</h3>
-        <a href="../Add Pet/add-pet.html"> <img src="../imgs/plus.png" width="150px"></a>
-    </div>
+        <div class="add-pet">
+            <h3>Add a Pet!</h3>
+            <!-- Assuming 'Add Pet' is in a folder one level up, in an 'Add Pet' directory -->
+            <a href="../Add Pet/add-pet.html"> <img src="../imgs/plus.png" width="150px"></a>
+        </div>
+    </main>
+
+    <!-- MANDATORY: Link the Firebase config and the page script -->
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="pet-selection.js"></script>
 
 </body>
+
+</html>
