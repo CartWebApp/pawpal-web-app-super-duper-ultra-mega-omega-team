@@ -86,12 +86,10 @@ input {
     margin: 3rem;
 }
 
-.flexbox > .sub > div > .external{
-    flex-flow: row wrap;
+.flexbox > .sub > .external > a{
     background-color: white;
     color: black;
     width: 25%;
-    justify-content: space-between;
     padding: 1rem;
     margin: 1rem;
     border: 2px solid black;
@@ -124,4 +122,8 @@ input {
 .new > .in > a:hover {
     cursor: pointer;
     background-color: #6b71d7;
+}
+
+.flexbox > .second > p {
+    margin-top: -1rem;
 }
