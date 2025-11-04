@@ -29,8 +29,9 @@
     </header>
 
     <main>
-        <h1>Add A Pet!</h1>
-        <input type="file" class="pet-img" accept="image/*" placeholder="Upload Pet Image" name="petImage">
+    <h1>Add A Pet!</h1>
+    <input type="file" class="pet-img" accept="image/*" placeholder="Upload Pet Image" name="petImage">
+    <img id="pet-preview" alt="Pet Image Preview" style="display:none; max-width: 100%; max-height: 250px; margin: 10px auto; border-radius: 10px; border: 2px solid #7378D3;" />
         <div class="pet-info">
             <input type="text" name="petName" placeholder="Pet Name" required>
             <input type="date" name="birthday" class="birthday" required>

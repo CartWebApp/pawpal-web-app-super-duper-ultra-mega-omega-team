@@ -1,6 +1,4 @@
-import { db, getPetsCollectionPath, getCurrentUserId } from '../firebase-config.js';
-import { collection, onSnapshot } from 'https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js';
-
+// Only use localStorage for pet display
 const petContainer = document.getElementById('pet-list-container');
 const placeholderPetImage = "https://placehold.co/150x150/7378D3/ffffff?text=Pet";
 
@@ -18,7 +16,20 @@ function createPetCard(pet) {
         border-radius: 10px;
         cursor: pointer;
         width: 200px;
+        transition: all 0.3s ease;
+        transform-origin: center;
     `;
+    
+    // Add hover effects
+    card.addEventListener('mouseenter', () => {
+        card.style.transform = 'scale(1.05)';
+        card.style.boxShadow = '0 4px 8px rgba(115, 120, 211, 0.2)';
+    });
+    
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'scale(1)';
+        card.style.boxShadow = 'none';
+    });
 
     const img = document.createElement('img');
     img.src = pet.imageUrl || placeholderPetImage;
@@ -47,52 +58,33 @@ function createPetCard(pet) {
     return card;
 }
 
-async function initializePetSelection() {
+function initializePetSelection() {
+    // Remove existing pet cards (but keep the add-pet button)
+    const existingCards = document.querySelectorAll('.pet-card');
+    existingCards.forEach(card => card.remove());
+    const oldMsgs = document.querySelectorAll('.pet-list-msg');
+    oldMsgs.forEach(msg => msg.remove());
+
+    let pets = [];
     try {
-        await getCurrentUserId(); // Wait for auth
-        const petsPath = getPetsCollectionPath();
-        if (!petsPath) {
-            alert("Could not get pets collection path. Are you signed in?");
-            console.error("No petsPath", { petsPath });
-            return;
-        }
-
-        const petsQuery = collection(db, petsPath);
-
-        // Set up real-time listener
-        onSnapshot(petsQuery, (snapshot) => {
-            // Clear existing pet cards but keep the add-pet button
-            const existingCards = document.querySelectorAll('.pet-card');
-            existingCards.forEach(card => card.remove());
-
-            let found = false;
-            snapshot.forEach((doc) => {
-                found = true;
-                const pet = { id: doc.id, ...doc.data() };
-                const card = createPetCard(pet);
-                // Insert before the add-pet button
-                petContainer.insertBefore(card, document.querySelector('.add-pet'));
-            });
-            if (!found) {
-                const msg = document.createElement('p');
-                msg.textContent = "No pets found. Add one!";
-                msg.style.color = '#2E4088';
-                petContainer.insertBefore(msg, document.querySelector('.add-pet'));
-            }
-        }, (err) => {
-            alert("Error loading pets: " + err.message);
-            console.error("onSnapshot error:", err);
-        });
-
-    } catch (error) {
-        alert("Error loading pets: " + error.message);
-        console.error("Error loading pets:", error);
-        const errorMsg = document.createElement('p');
-        errorMsg.textContent = "Sorry, we couldn't load your pets. Please try refreshing the page.";
-        errorMsg.style.color = 'red';
-        petContainer.insertBefore(errorMsg, document.querySelector('.add-pet'));
+        pets = JSON.parse(localStorage.getItem('pawpal_pets') || '[]');
+    } catch (e) {
+        pets = [];
     }
+
+    if (pets.length === 0) {
+        const msg = document.createElement('p');
+        msg.textContent = "No pets found. Add one!";
+        msg.className = 'pet-list-msg';
+        msg.style.color = '#2E4088';
+        petContainer.insertBefore(msg, document.querySelector('.add-pet'));
+        return;
+    }
+
+    pets.forEach(pet => {
+        const card = createPetCard(pet);
+        petContainer.insertBefore(card, document.querySelector('.add-pet'));
+    });
 }
 
-// Initialize when the page loads
 document.addEventListener('DOMContentLoaded', initializePetSelection);

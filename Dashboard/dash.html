@@ -28,59 +28,64 @@
     </header>
 
     <main>
-        <h1>Bruno</h1>
-        <img class="petImg" src="/imgs/bruno.png">
+        <h1></h1>
+        <img class="petImg" src="" alt="Pet's picture">
         <div class="daily-tasks">
             <h3>Daily Tasks</h3>
-            <!--Adding the daily tasks for bruno in checkbox form-->
+            <button class="add-task" id="addTaskButton"> + Add Task</button>
             <ul>
-                <li>
-                    <input type="checkbox" id="blunch" name="tasks" value="lunch">
-                    <label for="blunch">Give Bruno lunch</label>
-                </li>
-                <li>
-                    <input type="checkbox" id="bwalk" name="tasks" value="walk">
-                    <label for="bwalk">Take Bruno on a walk</label>
-                </li>
-                <li>
-                    <input type="checkbox" id="btreat" name="tasks" value="treat">
-                    <label for="btreat">Give Bruno a treat</label>
-                </li>
-                <li>
-                    <input type="checkbox" id="bbath" name="tasks" value="groom">
-                    <label for="bbath">Give Bruno a Bath</label>
-                </li>
-                <li>
-                    <input type="checkbox" id="bpark" name="tasks" value="park">
-                    <label for="bpark">Take Bruno to the park!</label>
-                </li>
+                <!-- Tasks will be populated by JavaScript -->
             </ul>
         </div>
 
         <div class="recent">
-            <!--Making the recent activity part of the dash-->
             <h3>Recent Activity</h3>
             <ul>
-                <li>You walked Bruno</li>
-                <li>You gave Bruno a bath</li>
-                <li>You took Bruno to the park</li>
+                <!-- Recent activity will be populated by JavaScript -->
             </ul>
         </div>
 
         <div class="appointments">
-            <!--THe appointments section-->
             <h3>Appointments</h3>
+            <button class="addAppt" id="addApptBtn">+ Add Appointment</button>
             <ul>
-                <li>Vet Appointment | 15:00 Today</li>
-                <li>Grooming Appointment | 12:30 In 3 Days</li>
-                <li><s>Grooming Appointment | 3 Weeks Ago</s></li>
+                <li>No upcoming appointments</li>
             </ul>
         </div>
 
         <div class="graphs">
             <h3>Activity Graphs</h3>
-            <a href="/Graphs/graphs.html"><img src="/imgs/graph-icon.png" width="75px"></a>
+            <a href="../Graphs/graphs.html"><img src="../imgs/graph-icon.png" width="75px"></a>
         </div>
 
     </main>
+
+    <!-- Task Modal -->
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <h3>Add New Task</h3>
+            <input type="text" id="taskInput" placeholder="Enter task description...">
+            <div class="modal-buttons">
+                <button id="cancelTask">Cancel</button>
+                <button id="saveTask">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Appointment Modal -->
+    <div id="appointmentModal" class="modal">
+        <div class="modal-content">
+            <h3>Add New Appointment</h3>
+            <input type="text" id="apptTitle" placeholder="Appointment title...">
+            <input type="date" id="apptDate">
+            <input type="time" id="apptTime">
+            <div class="modal-buttons">
+                <button id="cancelAppt">Cancel</button>
+                <button id="saveAppt">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add the dashboard JavaScript -->
+    <script src="dash.js"></script>
 </body>

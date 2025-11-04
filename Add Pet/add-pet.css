@@ -58,7 +58,7 @@ h1{
 
 .pet-img{
     grid-area: img;
-    color: rgba(240, 248, 255, 0);
+    color: transparent;
     border: 2px solid #7378D3;
     border-radius: 10px;
     width: 438.441px;
@@ -67,7 +67,19 @@ h1{
     cursor: pointer;
     background-image: url(../imgs/plus.png);
     background-size: cover;
+}
 
+/* the no file chosen button is ugly so byebye */
+.pet-img::file-selector-button {
+    display: none;
+}
+
+.pet-img {
+    color: transparent;
+}
+
+.pet-img:hover {
+    content: add a pet!;
 }
 
 .addPetButton{
@@ -88,3 +100,53 @@ h1{
     height: 60px;
 }
 
+@media (max-width: 1000px) {
+    main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .addPetButton{
+        margin-left: 0px;
+    }
+
+}
+
+@media (max-width: 500px) {
+    
+    main{
+        gap: 20px;
+    }
+    .pet-info, .pet-img{
+        width: 300px;
+        height: 250px;
+        gap: 10px;
+    }
+
+    h1{
+        margin-bottom: 5px;
+    }
+
+    .pet-info{
+        padding: 10px 0px;
+    }
+    
+}
+
+
+@media (max-width: 390px) {
+    
+    .pet-info, .pet-img{
+        width: 250px;
+        height: 200px;
+        gap: 5px;
+    
+}
+
+    a>img{
+        flex-direction: column;
+        width: 40px;
+    }
+
+}

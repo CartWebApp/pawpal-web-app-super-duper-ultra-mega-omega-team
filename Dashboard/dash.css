@@ -46,7 +46,7 @@ main{
     grid-template-rows: 100px 1.5fr 1fr 100px;
     grid-template-areas: 
     ". . h . ."
-    ". bruno recent appt ."
+    ". img recent appt ."
     ". daily daily appt ."
     ". . activ . .";
 }
@@ -56,10 +56,10 @@ h1{
 }
 
 .petImg{
+    /*Pet image stuff*/
     width: 500px;
-    grid-area: bruno;
+    grid-area: img;
     border-radius: 10px;
-    border: 2px solid #7378D3;
 }
 
 .daily-tasks{
@@ -106,12 +106,99 @@ ul{
 }
 .daily-tasks li{
     border: none;
-    margin: 5px
+    margin: 5px;
+}
+
+/* Button styles */
+.add-task, .addAppt {
+    background-color: #7378D3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+    margin: 10px;
+    align-self: flex-end;
+}
+
+.add-task:hover, .addAppt:hover {
+    background-color: #5A5FB3;
+}
+
+/* Modal styles for the popoups and */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #CFD9FF;
+    margin: 15% auto;
+    padding: 20px;
+    border: 2px solid #7378D3;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+}
+
+.modal input {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #7378D3;
+    border-radius: 5px;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.modal-buttons button {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#cancelTask, #cancelAppt {
+    background-color: #7b3838;
+    color: white;
+}
+
+#saveTask, #saveAppt {
+    background-color: #67aab8;
+    color: white;
+}
+
+#cancelTask:hover, #cancelAppt:hover {
+    background-color: #da190b;
+}
+
+#saveTask:hover, #saveAppt:hover {
+    background-color: #479a82;
 }
 
 
+@media (max-width: 390px) {
+    
+    a > img{
+        display: flex;
+        flex-direction: column;
+        width: 40px;
+    }
 
-
+}
 
 
 

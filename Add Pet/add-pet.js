@@ -72,19 +72,34 @@ function addPetHandler() {
         birthday: petBirthday,
         species: petSpecies,
         breed: petBreed,
-        image: petImage,
+        id: crypto.randomUUID(), // Add an ID for the pet
         dateAdded: new Date().toISOString()
     };
 
-    // 5. This is where you would typically save the data
-    //    For now, we'll just show it in the browser's console!
-    console.log("🥳 New Pet Added (Data):", newPet);
-    
-    // You could also add a success message to the user here!
-    alert(`Success! ${petName} has been added to your PawPal!`);
-    
-    // 6. Optional: Clear the form after submission
-    // window.location.reload(); // A simple way to reset the whole page
+    // Save image as data URL
+    if (petImageFile) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            newPet.imageUrl = e.target.result; // Save image as data URL
+            savePetToLocalStorage();
+        };
+        reader.readAsDataURL(petImageFile);
+    } else {
+        savePetToLocalStorage();
+    }
+
+    function savePetToLocalStorage() {
+        // Get existing pets or initialize empty array
+        let pets = JSON.parse(localStorage.getItem('pawpal_pets') || '[]');
+        // Add new pet
+        pets.push(newPet);
+        // Save back to localStorage
+        localStorage.setItem('pawpal_pets', JSON.stringify(pets));
+        // Show success message
+        alert(`Success! ${petName} has been added to your PawPal!`);
+        // Redirect to pet selection page
+        window.location.href = '../Pet Selection/pet-selection.html';
+    }
 }
 
 // Listen for a click on the "Add Pet" button
