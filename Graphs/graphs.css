@@ -62,3 +62,57 @@ main {
     flex-direction: column;
     align-items: center;
 }
+
+
+@media (max-width: 800px) {
+    /* Larger tablets: Make content stretch a bit more */
+    .active-graph {
+        max-width: 90%; 
+        margin: 30px 10px; /* Less margin on the sides */
+        padding: 15px;
+    }
+
+    .graph-img {
+       /* Make the img fill */
+        width: 100%;
+    }
+}
+
+
+
+@media (max-width: 550px) {
+    /* Smaller screens/phones */
+    .active-graph{
+        width: 90%;
+        margin: 20px 5px; 
+    }
+
+    .graph-img{
+        /* Make the image always fill its container */
+        width: 100%;
+    }
+    
+    .select {
+        /* Make the selector box fill more space */
+        width: 90%; 
+        padding: 15px;
+    }
+    
+    main {
+        margin: 20px 0; /* Less vertical margin on main container */
+    }
+}
+
+@media (max-width: 390px) {
+    /* small phones*/
+    nav img, .home img {
+        /* Shrink nav images */
+        width: 45px;
+    }
+
+    nav {
+        /* Navbar wrapping */
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
