@@ -2,6 +2,64 @@
 const petContainer = document.getElementById('pet-list-container');
 const placeholderPetImage = "https://placehold.co/150x150/7378D3/ffffff?text=Pet";
 
+/**
+ * Calculates the pet's current age in years and months from their birthday.
+ * @param {string} birthdayString - The pet's birthday in 'YYYY-MM-DD' format.
+ * @returns {string} The calculated age (e.g., '1 year, 3 months' or '5 years').
+ */
+function calculateAge(birthdayString) {
+    if (!birthdayString) {
+        return 'Age Unknown';
+    }
+    const today = new Date();
+    const birthDate = new Date(birthdayString);
+    
+    // Check if the date is valid
+    if (isNaN(birthDate.getTime())) {
+        return 'Age Unknown';
+    }
+
+    let years = today.getFullYear() - birthDate.getFullYear();
+    let months = today.getMonth() - birthDate.getMonth();
+    let days = today.getDate() - birthDate.getDate();
+
+    // Adjust months and years if necessary
+    if (days < 0) {
+        months--;
+    }
+
+    if (months < 0) {
+        years--;
+        months += 12;
+    }
+
+    // Rule: Show months for pets under 2 years old
+    if (years < 2) {
+        if (years === 1) {
+            // e.g., "1 year, 5 months"
+            const yearText = years === 1 ? '1 year' : `${years} years`;
+            const monthText = months === 1 ? '1 month' : `${months} months`;
+            
+            if (months === 0) {
+                 return yearText; // Exactly 1 year
+            }
+            return `${yearText}, ${monthText}`;
+        } else if (years === 0) {
+            // e.g., "7 months"
+            if (months === 0) {
+                 return 'Newborn'; // Less than 1 month
+            }
+            const monthText = months === 1 ? '1 month' : `${months} months`;
+            return monthText;
+        }
+    }
+
+    // Default: Show years for pets 2 years and older
+    const yearText = years === 1 ? '1 year' : `${years} years`;
+    return yearText;
+}
+
+
 function createPetCard(pet) {
     const card = document.createElement('div');
     card.className = 'pet-card';
@@ -45,10 +103,34 @@ function createPetCard(pet) {
 
     const name = document.createElement('h3');
     name.textContent = pet.name;
-    name.style.margin = '0';
+    name.style.margin = '0 0 5px 0'; // Added bottom margin
 
+    // --- Display Breed ---
+    const breed = document.createElement('p');
+    // Use the stored breed, defaulting to Species if breed is missing, or 'Unknown Breed'
+    const breedText = pet.breed && pet.breed.trim() !== '' ? pet.breed : (pet.species || 'Unknown Breed');
+    breed.textContent = breedText;
+    breed.style.cssText = `
+        font-size: 0.9em;
+        color: #2E4088;
+        margin: 0 0 3px 0;
+        font-weight: bold;
+    `;
+    
+    // --- Display Age (Now with Months) ---
+    const age = document.createElement('p');
+    age.textContent = calculateAge(pet.birthday);
+    age.style.cssText = `
+        font-size: 0.9em;
+        color: #555;
+        margin: 0;
+    `;
+    
+    // Append new elements to the card
     card.appendChild(img);
     card.appendChild(name);
+    card.appendChild(breed);
+    card.appendChild(age);
 
     card.addEventListener('click', () => {
         localStorage.setItem('activePetId', pet.id);
