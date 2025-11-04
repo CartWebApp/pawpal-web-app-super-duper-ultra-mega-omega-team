@@ -83,3 +83,17 @@ main > button:hover {
     margin-right: 290px;
     margin-top: -48px;
 }
+
+@media (max-width: 390px) {
+    /* small phones*/
+    nav img, .home img {
+        /* Shrink nav images */
+        width: 45px;
+    }
+
+    nav {
+        /* Navbar wrapping */
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

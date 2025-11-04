@@ -97,6 +97,16 @@ article {
 }
 
 
-@media (max-width) {
-    nav: ;
+@media (max-width: 390px) {
+    /* small phones*/
+    nav img, .home img {
+        /* Shrink nav images */
+        width: 45px;
+    }
+
+    nav {
+        /* Navbar wrapping */
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
